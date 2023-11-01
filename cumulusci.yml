@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '3.80.0'
+project:
+    name: gitrepos
+    package:
+        name: gitrepos
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/gitrepos/tests
+            options:
+                outputdir: robot/gitrepos/results
+
+    robot_testdoc:
+        options:
+            path: robot/gitrepos/tests
+            output: robot/gitrepos/doc/gitrepos_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
